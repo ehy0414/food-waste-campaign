@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
-  const API_KEY = process.env.NEXT_PUBLIC_API_KEY; // 서버 환경변수로 API 키 관리 권장
+  const API_KEY = process.env.API_KEY; // 서버 환경변수로 API 키 관리 권장
 
   if (!API_KEY) {
     return NextResponse.json({ error: 'API 키가 설정되지 않았습니다.' }, { status: 500 });
