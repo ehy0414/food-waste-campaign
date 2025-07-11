@@ -59,7 +59,7 @@ export default function TodayChart() {
     <div className="max-w-3xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">📊 최신 배출량 그래프</h1>
       <p className="mt-3 text-sm text-gray-500">
-        본 데이터는 공공데이터 포털의 한국환경공단_RFID기반 음식물쓰레기 배출정보를 참고하였습니다
+        본 데이터는 공공데이터 포털의 한국환경공단_RFID기반 음식물쓰레기 배출정보를 참고하였습니다.
       </p><br/>
       <Line data={data} />
       
