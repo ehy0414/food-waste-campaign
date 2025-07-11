@@ -5,34 +5,46 @@ import DOMPurify from 'dompurify';
 import { motion } from 'framer-motion';
 
 export default function RecipeFinder() {
-  const [ingredients, setIngredients] = useState('');
-  const [recipe, setRecipe] = useState<string>('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+    const [ingredients, setIngredients] = useState('');
+    const [recipe, setRecipe] = useState<string>('');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
 
-  const sample = `
-  <div class="p-6 bg-white rounded-xl shadow-md prose prose-lg text-gray-800">
-    <h2 class="text-2xl font-bold text-red-600 mb-4">🍽️ 전통 전주 음식 레시피</h2>
-    <ul class="space-y-8">
-      <li class="border-l-4 border-orange-400 pl-4">
-        <p class="text-xl font-extrabold text-orange-600 mb-2">
-          <strong>🍚 <span class="text-orange-800">전주 비빔밥</span></strong>
-        </p>
-        <p class="text-gray-700 font-semibold mb-1">조리법</p>
-        <ul class="list-decimal list-inside text-gray-600 space-y-1">
-          <li>쌀 1컵을 씻어 1.2컵의 물로 밥을 짓습니다.</li>
-          <li>콩나물 100g을 끓는 물에 3분간 데친 후 찬물에 헹굽니다.</li>
-          <li>당근, 시금치 등 나물 50g씩을 각각 데치고 간장 1작은술, 참기름 1작은술로 무칩니다.</li>
-          <li>고추장 1큰술, 참기름 1작은술, 설탕 1작은술을 섞어 비빔 소스를 만듭니다.</li>
-          <li>그릇에 밥, 나물, 콩나물을 보기 좋게 담고 고추장을 올린 후 계란 프라이를 올려 마무리합니다.</li>
-        </ul><br/>
-      </li>
-    </ul>
-  </div>`;
+    const handleSubmit = async () => {
+    if (!ingredients.trim()) {
+        setError('재료를 입력해주세요!');
+        return;
+    }
 
-  const handleSubmit = async () => {
-    setRecipe(sample);
-  };
+    setLoading(true);
+    setError('');
+    setRecipe('');
+
+    try {
+        const response = await fetch('/api/recipe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 
+                ingredients: ingredients.trim(),
+                prompt: ingredients.trim()
+            }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            setRecipe(data.result);
+        } else {
+            setError(data.error || '레시피를 불러오는데 실패했습니다.');
+        }
+    } catch (err) {
+        setError('네트워크 오류가 발생했습니다. 다시 시도해주세요.');
+    } finally {
+        setLoading(false);
+    }
+};
 
   return (
     <div className="min-h-screen bg-white py-10 px-4">
@@ -45,11 +57,11 @@ export default function RecipeFinder() {
           className="text-center mb-10"
         >
           <div className="flex items-center justify-center mb-4">
-            <h1 className="text-4xl font-bold text-orange-600">음식 레시피 추천해드려요!</h1>
+            <h1 className="text-4xl font-bold text-orange-600">다같이 음식을 줄여봐요!</h1>
           </div>
           <div className="flex items-center justify-center mb-6">
             <span className="text-xl mr-2">📍</span>
-            <p className="text-orange-500 text-lg">남은 재료를 말해주세요! AI가 추천해드립니다!</p>
+            <p className="text-orange-500 text-lg">남은 재료를 말해주세요! AI가 레시피를 추천해드립니다!</p>
           </div>
         </motion.div>
 
