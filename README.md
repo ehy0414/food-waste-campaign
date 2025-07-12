@@ -68,7 +68,7 @@ AI, 시각화, 디자인 요소를 결합해
 
 ## 🔗 배포 링크
 
-👉 [남김이 서비스 바로가기](https://your-project.vercel.app)  
+👉 [남김이 서비스 바로가기](https://namgim.vercel.app/)  
 (*Vercel을 통한 배포*)
 
 ---
