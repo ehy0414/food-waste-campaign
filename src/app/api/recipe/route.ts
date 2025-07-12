@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     const prompt = `
 당신은 한국 전통 요리 전문가입니다.
 
-아래 재료를 기반으로 만들 수 있는 전통 전주 음식 레시피를 HTML 형식으로 출력해주세요.
+아래 재료를 기반으로 만들 수 있는 음식 레시피를 HTML 형식으로 출력해주세요.
 
 ❗ 출력 형식에 대한 세부 지침:
 
