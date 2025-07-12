@@ -15,9 +15,8 @@ export default function Header() {
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-6xl mx-auto flex justify-between items-center relative">
-        {/* 로고 */}
         <Link href="/" className="text-2xl font-bold text-orange-500 flex items-center gap-2">
-          <span>🌿 EcoFood</span>
+          <span>Zero Kitchen</span>
         </Link>
 
         {/* 데스크탑 네비게이션 */}
