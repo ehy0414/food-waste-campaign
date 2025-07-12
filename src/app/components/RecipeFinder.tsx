@@ -60,7 +60,7 @@ export default function RecipeFinder() {
           </div>
           <div className="flex items-center justify-center mb-6">
             <span className="text-xl mr-2">📍</span>
-            <p className="text-orange-500 text-lg">남은 재료를 말해주세요! AI가 레시피를 추천해드립니다!</p>
+            <p className="text-orange-500 text-lg">남은 재료를 말해주세요! 남김이 AI가 레시피를 추천해드립니다!</p>
           </div>
         </motion.div>
 

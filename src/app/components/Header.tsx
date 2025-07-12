@@ -16,7 +16,7 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto flex justify-between items-center relative">
         <Link href="/" className="text-2xl font-bold text-orange-500 flex items-center gap-2">
-          <span>Zero Kitchen</span>
+          <span>Namgim</span>
         </Link>
 
         {/* 데스크탑 네비게이션 */}

@@ -1,11 +1,11 @@
 import Chart from '../components/Chart';
 
 export const metadata = {
-  title: '제로키친 - 배출량 그래프',
+  title: '남김이 - 배출량 그래프',
   description: '일별 음식물 쓰레기 배출량을 확인해보세요!',
   openGraph: {
     type: 'website',
-    title: '배출량 그래프',
+    title: '남김이 그래프',
     description: '일별 음식물 쓰레기 배출량을 확인해보세요!',
     images: '/favicon.ico',
   },

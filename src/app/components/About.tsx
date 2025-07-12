@@ -30,7 +30,7 @@ export default function About() {
           <h2 className="text-2xl font-semibold text-orange-500 mb-3">💡 어떻게 작동하나요?</h2>
           <p className="text-gray-800 text-base leading-relaxed">
             집에 남은 재료를 입력해보세요!<br />
-            AI가 여러분께 어울리는 레시피를 제안해드립니다.<br />
+            남김이 AI가 여러분께 어울리는 레시피를 제안해드립니다.<br />
             맛있게 먹고, 음식물 배출도 줄여보아요 😊
           </p>
         </motion.div>
