@@ -30,7 +30,7 @@ AI, 시각화, 디자인 요소를 결합해
 
 | 구분 | 기술 |
 |------|------|
-| **Frontend** | [Next.js](https://nextjs.org/) v15.3.5, JavaScript |
+| **Frontend** | [Next.js](https://nextjs.org/) v15.3.5, TypeScript |
 | **AI API** | [Gemini API (Google Generative AI)](https://ai.google.dev/) |
 | **Style** | TailwindCSS |
 | **Deployment** | Vercel |
