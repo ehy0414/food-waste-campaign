@@ -23,7 +23,7 @@ export async function GET(request: Request) {
 //   console.log(`요청된 날짜: ${disYear}-${disMonthStr}`);
 
   // API 요청 URL 생성
-  const url = `https://apis.data.go.kr/B552584/RfidFoodWasteServiceNew/getTotalDateList?serviceKey=${API_KEY}&type=json&disYear=${disYear}&disMonth=${disMonthStr}&page=1&rowNum=10`;
+  const url = `https://apis.data.go.kr/B552584/RfidFoodWasteServiceNew/getTotalDateList?serviceKey=${API_KEY}&type=json&disYear=${disYear}&disMonth=${disMonthStr}&page=1&rowNum=31`;
 
   try {
     const res = await fetch(url, { next: { revalidate: 60 } }); // 60초 캐시 (선택)
